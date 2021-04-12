@@ -8,6 +8,8 @@ all available output devices and let's you choose which one to use.
 Since version 5, it also provides a shortcut to quickly switch output sources: 
 `<Super>`+`q`
 
+Version 16 removes the shortcut until it can be customized.
+
 Most importantly this extension is as simple as possible. Therefore it does not
 include an input switcher or similar.
 See Audio-Input-Switcher (https://github.com/anduchs/audio-input-switcher)

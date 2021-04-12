@@ -106,26 +106,26 @@ function enable () {
 		keyBindingMode = Shell.KeyBindingMode.ALL;
 	}
 
-	Main.wm.addKeybinding("switch-next-audio-output",
-		settings,
-		Meta.KeyBindingFlags.NONE,
-		keyBindingMode,
-		function(display, screen, window, binding) {
+	// Main.wm.addKeybinding("switch-next-audio-output",
+	// 	settings,
+	// 	Meta.KeyBindingFlags.NONE,
+	// 	keyBindingMode,
+	// 	function(display, screen, window, binding) {
 
-			let control = Main.panel.statusArea.aggregateMenu._volume._control;
-			let sinklist = control.get_sinks();
+	// 		let control = Main.panel.statusArea.aggregateMenu._volume._control;
+	// 		let sinklist = control.get_sinks();
 
-			if (sinklist.length === 0) {
-				return;
-			}
-			sinkIndex++
-			if (sinkIndex >= sinklist.length) {
-				sinkIndex = 0
-			}
-			let sink = sinklist[sinkIndex];
-			control.set_default_sink(sink);
-		}
-	);
+	// 		if (sinklist.length === 0) {
+	// 			return;
+	// 		}
+	// 		sinkIndex++
+	// 		if (sinkIndex >= sinklist.length) {
+	// 			sinkIndex = 0
+	// 		}
+	// 		let sink = sinklist[sinkIndex];
+	// 		control.set_default_sink(sink);
+	// 	}
+	// );
 }
 
 function disable () {
