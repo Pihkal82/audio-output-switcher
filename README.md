@@ -37,3 +37,7 @@ Credits
 
 Originally authored by @anduchs.
 
+
+PIHKAL FORK CHANGES: 
+Trigger reload of PulseAudio-Equalizer after setting the new sink.
+Probably not useful for many people but does what I need it to do.
