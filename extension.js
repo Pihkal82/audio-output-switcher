@@ -35,6 +35,12 @@ const GETTEXT_DOMAIN = "audio-output-switcher@anduchs";
 
 const { GObject, St } = imports.gi;
 
+// Start launch EQ mod
+const Gio = imports.gi.Gio;
+const ctx  = global.create_app_launch_context(0, -1);
+const prog = Gio.AppInfo.create_from_commandline('pulseaudio-equalizer enable' , null, Gio.AppInfoCreateFlags.NONE); 
+// Stop launch EQ mod
+
 const Gettext = imports.gettext.domain(GETTEXT_DOMAIN);
 const _ = Gettext.gettext;
 
@@ -93,6 +99,7 @@ const AudioOutputSubMenu = GObject.registerClass(
         let item = new PopupMenu.PopupMenuItem(sink.get_description());
         item.connect("activate", () => {
           control.set_default_sink(sink);
+          prog.launch([], ctx); //Enable EQ after sink change
         });
         this.menu.addMenuItem(item);
       }
